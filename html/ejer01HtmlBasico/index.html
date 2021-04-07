@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Basico</title>
+</head>
+<body>
+    <h1>Primer parrafo corto (incluye el retorno de carro)</h1>
+    <h2>Segundo parrafo corto (incluye el retorno de carro)</h2>
+    <h2>Grupo de navegación</h2>
+    <ul>
+        <li><a href="http://yahoo.com.ar/">Yahoo</a></li>
+        <li><a href="http://google.com/">Google</a></li>
+        <li><a href="http://youtube.com/">Youtube</a></li>
+    </ul>
+    <section id="enlaces">
+        <hr>
+        <a href="./OtraPaginaEnMismaVentana.html">Enlace a otra pagina dentro de la misma pestaña </a> &nbsp&nbsp
+        <a href="./OtraPaginaEnNuevaVentana.html" target="_blank">Enlace a otra pagina en nueva pestaña </a> &nbsp&nbsp
+        <a href="#anclaje">Ancla a otro punto dentro de esta pagina </a> &nbsp&nbsp
+        <br>
+        <br>
+        <hr>
+    </section>
+    <h1>Preguntas</h1>
+    <section id=principal>
+        <h3>Dar un par de ejemplos de uso de etiquetas meta.</h3>
+        <p> Las etiquetas meta por lo general llevan dos atributos, uno que indica el tipo de información 
+            y otro el contenido. Se puede utilizar para indicar el código de lenguaje al navegador, indicando 
+            por ejemplo al primer valor "Content-type" y al segundo el valor "UTF-8". También se puede utilizar
+            para dirigir al usuario a otra pagina al refrescarla, colocando "refresh" en el primer atributo y en el segundo
+            "5;url=http://www.youtube.com" (siendo 5 la cantidad de segundos que tarda en redirigir). Otro ejemplo
+            es colocando "description" en el primer atributo y luego en el otro una descripcion de la página.
+            </p>
+        <h3>Nombrar al menos 2 atributos aplicables a la etiqueta HTML</h3>
+            <p>lang="es", style="height:100%" por ejemplo.</p>
+        <h3>¿Como se relaciona un header http con la etiqueta head de HTML?</h3>
+            <p>Se puede relacionar a través del atributo http-equiv que proporciona un header HTTP 
+            para la información/valor del contenido del atributo.</p>
+        <h3>¿Que es UTF8?</h3>
+            <p>UTF-8 (Unicode Transformation Format-8) es un formato de codificación de caracteres, 
+            en el que cada caracter es representado por un octeto (8 bits). 
+            Cada carácter es identificado por un número, pero para que ese número o código sea entendido 
+            por la máquina debe estar codificado, es decir traducido a binario de un modo específico.
+            Unicode utiliza diferentes formas de codificación, entre ellas UTF-8. </p>
+        <h3>¿Que atributo HTML sirve para aplicar estilo, a que etiqueta es aplicable?</h3>
+            <p> El atributo style sirve para aplicar estilo, su valor es una cadena de parámetros de estilo
+            nombre:valor;nombre:valor;….Cada parámetro indica una variable de estilo. Es aplicable a las etiquetas
+            body, p, h1, h2, hr, img src, ul, li, section, articule, footer (por nombrar algunas vistas en el
+            PDF).</p>
+        <h3>¿Donde se indica que un enlace debe ubicar el documento en una nueva pestaña?</h3>
+            <p>Con target="_blank", este atributo indica que el nuevo documento será abierto en una 
+            nueva pestaña del navegador. El mismo se coloca junto con href dentro de la etiqueta "a"</p>
+        <h3>Explicar cuando usarían etiquetas semánticas y con que propósito.</h3>
+            <p>Cuando sea necesario (para organizar/estructurar el documento), con el fin de indicar el contenido 
+            que engloban y su relación con el conjunto de elementos del documento HTML.</p> 
+        <h3>¿Que atributos de estilo básicos aplicarían a una tabla? Explicar</h3>
+            <p>El atributo border para poder mostrar bordes más sólidos, width y height para el alto y ancho, 
+            background-color para poner un color de fondo.</p> 
+        <h3>¿Que diferencia existe entre la etiqueta body de un documento HTML y el body del protocolo HTTP?</h3>
+            <p>El body en HTML es la etiqueta usada para indicar el cuerpo de un documento HTML, es la parte 
+            donde se describe el contenido de la página (su estructura, su forma, sus colores, texto, y 
+            todo lo visual) mientras que en el body del protocolo HTTP contiene datos, pueden ir datos ingresados
+            por el usuario en un formulario y archivos que el cliente quiera enviar al servidor</p> 
+        <h3>¿Que atributos marcan la agrupación de celdas de una tabla?. ¿A que etiquetas se aplican?</h3>
+            <p>Colspan y rowspan y se aplican dentro de la etiqueta td</p>
+    </section>
+    <section id="imagenes">
+        <h3>Section de imagenes</h3>
+        <p>En esta sección mostraremos imágenes identificativas de nuestro sitio</p>
+        <p>La siguiente imagen esta insertada en tamaño natural</p>
+        <img src="./imagen.jpg" alt="">
+        <p>Todas las imagenes se veran deformadas por haber doble parametro de estilo (ancho y alto)</p>
+        <img src="./imagen.jpg" alt="" style="width:100px;height:500px">
+        <img src="./imagen.jpg" alt="" style="width:200px;height:500px">
+        <img src="./imagen.jpg" alt="" style="width:300px;height:500px">
+        <img src="./imagen.jpg" alt="" style="width:350px;height:500px">
+        <img src="./imagen.jpg" alt="" style="width:400px;height:500px">
+    </section>
+    <br><br><br><br><br>
+    <hr>
+    <section id="video">
+        <h3>Section de video</h3>
+        <iframe src="https://player.vimeo.com/video/477663995?color=ffffff" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <p><a href="https://vimeo.com/477663995">Resonance</a> from <a href="https://vimeo.com/joycenho">Joyce N. Ho</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+    </section>
+    <section id="anclaje">
+        <h1>Anclajes</h1>
+        <p>Punto de anclado</p>
+    </section>
+    <section id="datos">
+        <h1>Datos del alumno</h1>
+        <p>Glenda Leikin</p>
+        <p>Labo 3 - Turno noche</p>
+    </section>
+</body>
+</html>
