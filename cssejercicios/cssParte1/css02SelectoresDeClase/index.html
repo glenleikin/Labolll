@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        p{
+            margin-bottom: 50px;
+            font-size: 12px;
+        }
+        p.claseAcotacion{
+            margin: 4px;
+            margin-bottom: 50px;
+            text-align:center; 
+            font-size:18px;
+            color:blue;
+            font-style: italic;
+            border-style:solid;
+            border-width:thin;
+            border-color:blue;
+            line-height:3.5;
+        }
+        .claseDestacado{
+            font-size: 16px;
+            font-weight: bold;
+        }
+        p.claseAyuda{
+            width: 50%;
+            font-size: 18px;
+            font-weight: bold;
+            text-align:center; 
+            color:rgb(233, 197, 39);
+            font-style: italic;
+            border-style:solid;
+            border-width:thin;
+            border-color: yellow;
+        }
+        p.claseContenidoComun{
+            font-size: 14px;
+        }
+        #idUnico{
+            width: 25%;
+            font-size: 14px;
+            font-weight: bold;
+            text-align:center; 
+            margin-left: 0%;
+            margin-right: 0%;
+            color: red;
+            font-style: italic;
+            border-style:solid;
+            border-width:thin;
+            border-color: red;
+        }
+        img.imagenAl50 {
+            max-width: 50%;
+        }
+        .volver {
+            font-size: 16px;
+            padding: 18px 30px;
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            transition: all 300ms ease 0ms;
+            z-index: 99;
+            border: 2px solid blueviolet;
+            background-color: white;
+            color: blueviolet;
+
+        }
+        .volver:hover {
+            background-color:blueviolet;
+            color: white;
+        }
+    </style>
+    <title>Selectores de Clase</title>
+</head>
+<body>
+    <h1>A partir de esta pagina no usaremos más el atributo style en ninguna etiqueta</h1>
+    <h1>Todo el estilo será definido dentro de una etiqueta style, anidada en la etiqueta head del documento</h1>
+    <h1>Todos los parrafos tienen un default como estilo que incluyen en un margin-bottom para separarlos más entre ellos</h1>
+    <p>Este parrafo contiene un grupo de palabras delimitado por una etiqueta "span". El comienzo es aqui:
+        <span class="claseDestacado"> grupo de palabras destacas con el estilo claseDestacado</span>
+    </p>
+    <p class="claseAcotacion">Este parrafo toma el estilo definido en la etiqueta style en el header del documento como class="claseAcotacion"
+        asdfghj sdfghjk sdfghj sdfgh sdfghjk sdfghj  sdfghj sdfghj sdfghjk sdfghj sdfgh sdfghj sdfghj sdfgh asdfgh
+        ghjklñ sdfghjk sdfghjk sdfghj dfghjk dfghjk sdfghjk dfghj dfg dfghjk dfghj 
+    </p>
+    <p class="claseDestacado">Este parrafo toma el estilo definido en la etiqueta sytle en el header del documento como class="claseDestacado"</p>
+    <p class="claseAyuda">Este parrafo toma el estilo definido en la etiqueta style en el header del documento como class="claseAyuda"</p>
+    <p class="claseContenidoComun">Este parrafo toma el estilo definido en la etiqueta style en el header del documento como class="claseContenidoComun"</p>
+    <p id="idUnico">Parrafo formado por un estilo particular definido en el style del documento para un parrafo especifico id="idUnico"</p>
+    <h1>Todas las imagenes con class="imagenA150" en esta página se encuentra limitadas al 50% del ancho del viewport
+        más allá de su tamaño real en pixeles:
+    </h1>
+    <img src="./imagen.jpg" alt="" class="imagenAl50">
+    <a href="../../../cssejercicios/index.html" class="volver">Volver</a>
+</body>
+</html>
