@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centrado y Padding</title>
+    <style>
+    html, body{
+        width: 100%;
+        margin: 0% auto;
+    }
+    div.estiloX {
+        background-color: lightblue;
+        width: 50%;
+        margin: auto;
+    }
+    div.estiloY {
+        background-color: lightgreen;
+        padding-left: 10%;
+        padding-right: 10%;
+        width: 50%;
+        margin: auto;
+    }
+    div.estiloZ {
+        background-color: rgb(238, 224, 199);
+        padding-left: 10%;
+        padding-right: 10%;
+        box-sizing: border-box;
+        width: 50%;
+        margin: auto;
+    }
+    .volver {
+        font-size: 16px;
+        padding: 18px 30px;
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        transition: all 300ms ease 0ms;
+        z-index: 99;
+        border: 2px solid blueviolet;
+        background-color: white;
+        color: blueviolet;
+
+    }
+    .volver:hover {
+        background-color:blueviolet;
+        color: white;
+    }  
+    </style>
+        
+</head>
+<body>
+    <h1>Los siguientes elementos tienen un ancho del 50% de la ventana</h1>
+    <div>
+    <div class="estiloX">
+        Texto en el interior <br>
+        Texto en el interior <br>
+        Texto en el interior <br>
+        Texto en el interior <br>
+        Texto en el interior <br>
+
+    </div>
+    <div class="estiloY">
+        Texto en el interior con padding y sin box-sizing <br>
+        Texto en el interior con padding y sin box-sizing <br>
+        Texto en el interior con padding y sin box-sizing <br>
+        Texto en el interior con padding y sin box-sizing <br>
+        Texto en el interior con padding y sin box-sizing <br>
+    </div>
+    <div class="estiloZ">
+        Texto en el interior con padding y con box-sizing <br>
+        Texto en el interior con padding y con box-sizing <br>
+        Texto en el interior con padding y con box-sizing <br>
+        Texto en el interior con padding y con box-sizing <br>
+        Texto en el interior con padding y con box-sizing <br>
+    </div>
+    <a href="../../../cssejercicios/index.html" class="volver">Volver</a>
+</body>
+</html>

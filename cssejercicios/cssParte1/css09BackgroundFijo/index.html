@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html, body{
+            width: 100%;
+            margin: 0% auto;
+        }
+        div.elementoCentrado {
+            position: absolute; 
+            margin-left: 35%;
+            margin-top: 10%;
+            z-index: 1;
+            height: 50%;
+            width:25%;
+            background-color:lightblue;
+            margin-top: 5%;
+            border-width: 3px;
+            border-style: solid;
+            border-color: black;
+        }
+        div.estiloX {
+            padding: 2%;
+            box-sizing: border-box;
+            position: absolute; 
+            left: 40px; 
+            top: 30px; 
+            z-index: 1;
+            height: 300px;
+            width:70%;
+            overflow-y: scroll;
+            color:white;
+            opacity: 0.5;
+            border-top-left-radius: 20px;
+            border-width: 3px;
+            border-style: solid;
+            border-color: red;
+            background-image:url('./imagen.jpg');
+            background-repeat:no-repeat; 
+            background-position:center center;
+            background-size:contain;     
+        }
+        .volver {
+            font-size: 16px;
+            padding: 18px 30px;
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            transition: all 300ms ease 0ms;
+            z-index: 99;
+            border: 2px solid blueviolet;
+            background-color: white;
+            color: blueviolet;
+
+        }
+        .volver:hover {
+            background-color:blueviolet;
+            color: white;
+        }  
+    </style>
+    <title>Background Fijo</title>
+</head>
+<body>
+    <div class="elementoCentrado">
+        <div class="estiloX">
+            El padding es importante para que el texto no quede pegado al borde <br><br>
+            No olvidar usar el box-sizing: border-box para que la dimensión de la caja sea
+            exactamente la definida en el width. <br><br>
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            Texto.Texto.Texto.
+            <a href="../../../cssejercicios/index.html" class="volver">Volver</a>
+        </div>
+    </div>
+</body>
+</html>
