@@ -1,0 +1,94 @@
+html, body {
+    margin:0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contenedor{
+    margin:auto;
+    width: 80%;
+    background-color: lightgoldenrodyellow;
+    overflow: auto;
+}
+h1{
+    margin-bottom: 4px;
+}
+.div1{
+    float: left;
+    padding:60px;
+    margin-left: 15px; 
+    width: 30%;
+    height: 500px;
+    box-sizing: border-box;
+    border-width: 2px;
+    background-color: lightblue;
+}
+.imagen1{
+    margin: auto;
+    bottom:10%;
+    width: 100%;
+    height: 160px;
+}
+.div2, .div3, .div4,.div5{
+    display: flex;
+    float: left;
+    margin-left: 15px;
+    padding:60px;
+    width: 30%;
+    height: 200px;
+    box-sizing: border-box;
+    border-width: 2px;
+    background-color: lightblue;
+}
+
+.div4,.div5{
+    margin-top: 15px;
+}
+
+.div6{
+    float: left;
+    margin-left: 15px;
+    margin-top: 15px;
+    padding:60px;
+    width: 30%;
+    height: 500px;
+    box-sizing: border-box;
+    border-width: 2px;
+    background-color: lightblue;
+}
+
+.imagen2{
+        bottom:10%;
+        width: 100%;
+        height: 75%;
+        margin: 1%;
+}
+
+.volver {
+    font-size: 16px;
+    padding: 18px 30px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    transition: all 300ms ease 0ms;
+    z-index: 99;
+    border: 2px solid blueviolet;
+    background-color: white;
+    color: blueviolet;
+
+}
+.volver:hover {
+    background-color:blueviolet;
+    color: white;
+}  
+.footer {
+    bottom:0;
+    margin-top: 5px;
+    width: 100%;
+    height: 60px;
+    background-color: blueviolet;
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 15px;
+}
