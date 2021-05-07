@@ -1,0 +1,40 @@
+html, body {
+    height: 100%;
+    margin:0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contenedor{
+    margin:auto; 
+    width: 90%;
+    height: 100vh;
+    overflow: auto; 
+    background-color: lightyellow;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:center;  
+    flex-wrap:wrap;
+}
+
+img{
+    height: 200px;
+    width: 300px;
+}
+.volver {
+    font-size: 16px;
+    padding: 18px 30px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    transition: all 300ms ease 0ms;
+    z-index: 99;
+    border: 2px solid blueviolet;
+    background-color: white;
+    color: blueviolet;
+
+}
+.volver:hover {
+    background-color:blueviolet;
+    color: white;
+}  

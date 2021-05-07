@@ -1,0 +1,151 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0%;
+    padding: 0%;
+    height: 100%;
+}
+
+.contenedor{
+    margin: auto;
+    height: 100%;
+    width: 90%;
+}
+
+.contenido{
+    overflow: auto;
+    background-color: rgb(221, 78, 11);
+    display: block;
+    height: 70%;
+}
+
+header,
+footer{
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(163, 11, 0); 
+}
+
+ul li {
+    padding: 10px 30px;
+    width: 25%;
+    background-color:orange;
+    color: rgb(71, 71, 71);
+    position:relative; 
+    display: flex;
+    float:left; 
+    justify-content: center;
+    align-items: center;  
+}
+
+ul li:hover{
+    background-color: rgb(168, 168, 168);
+    color: rgb(221, 221, 221);
+}
+
+ul a {
+    color: rgb(71, 71, 71);
+}
+
+ul a:hover{
+    color: rgb(221, 221, 221);
+}
+
+ul ul { 
+    display:none; 
+    position:absolute; 
+    top:100%; 
+    left:0; 
+}
+
+.columna{
+    float: left;
+    background-color: grey;
+}
+
+#primer{
+    height: 70%;
+}
+
+#segunda{
+    height: 85%;
+}
+
+#tercera{
+    height: 77%;
+}
+
+#cuarta{
+    height: 60%;
+}
+
+#quinta{
+    height: 62%;
+}
+@media (min-width:900px){
+    .columna {
+    width:20%;
+    }
+}
+
+@media (min-width:0px) and (max-width:900px){ 
+    .columna {
+    width:50%;
+    }
+}
+
+@media (min-width:0px) and (max-width:900px){ 
+    #primer, #segunda, #tercera, #cuarta, #quinta {
+    height: 20%;
+    }
+}
+
+@media (min-width:0px) and (max-width:1200px){ 
+    p{
+       display: none;
+    }
+    .globos{
+        display: none;
+    }
+    .paisaje{
+        display: none;
+    }
+}
+
+.globos{
+    max-width: 60%;
+    max-height: 60%;
+    transform: translateX(-50%);
+}
+
+.paisaje{
+    max-width: 60%;
+    max-height: 60%;
+    transform: rotateZ(10deg);
+}
+.volver {
+    font-size: 16px;
+    padding: 18px 30px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    transition: all 300ms ease 0ms;
+    z-index: 99;
+    border: 2px solid blueviolet;
+    background-color: white;
+    color: blueviolet;
+
+}
+
+.volver:hover {
+    background-color:blueviolet;
+    color: white;
+}  

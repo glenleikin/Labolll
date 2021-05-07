@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Forms RWD</title>
+</head>
+<body>
+    <div class="contenedor">
+    <header>
+        <h1>Formulario</h1>
+    </header>
+    <form action="./RespuestaFormulario.html" target="_blank">      
+            <div class="entrada">
+                <label for="apellido">1.Apellido</label>
+                <input type="text" name="apellido" id="apellido">
+            </div>
+            <div class="entrada">
+                <label for="nombre">2.Nombre</label>
+                <input type="text" name="nombre" id="nombre">
+            </div>
+            <div class="entrada">
+                <label for="contraseña">3.Contraseña</label>
+                <input type="password" id="contraseña" name="contraseña" value=""/>
+            </div>
+            <div class="entrada">
+                <label for="deshabilitado">4.Campo deshabilitado</label>
+                <input type="text" id="deshabilitado" name="deshabilitado" value="valor deshabilitado" disabled/>
+            </div>
+            <div class="entrada">
+                <label for="fecha">5.Fecha y hora</label>
+                <input type="date" id="fecha" name="fecha"> 
+            </div>
+            <div class="entrada">
+                <label for="dni">6.DNI</label>
+                <input type="number" name="dni" id="dni">
+            </div>
+            <div class="entrada">
+                <label style="font-weight: bold" for="actividades" >7.Actividades extracurriculares</label> <br/>
+                <input type="checkbox" id="deporte" name="deporte" value="deporte"/> Musica <br>
+                <input type="checkbox" id="deporte" name="deporte" value="deporte"/> Pintura Artistica <br>
+                <input type="checkbox" id="deporte" name="deporte" value="deporte"/> Deportes <br>
+                <input type="checkbox" id="deporte" name="deporte" value="deporte"/> Teatro
+            </div>
+            <div class="entrada">
+                <label for="sexo">8.Sexo</label>
+                <p>Masculino 
+                    <input type="radio" id="masculino" name="sexo" value="m" checked="checked">
+                    Femenino
+                    <input type="radio" id="femenino" name="sexo" value="f">
+                </p>
+            </div>
+            <div class="entrada">
+                <label for="vacio"><h3>9.Vacío</h3></label>
+            </div>
+            <div class="entrada">
+                <label for="estudios" >10.Estudios cursados</label> <br/>
+                <select id="estudios" name="estudios">
+                    <option value="pri" selected="selected" >Primarios</option>
+                    <option value="sec">Secundarios</option>
+                    <option value="ter">Terciarios</option>
+                    <option value="uni">Universitarios</option>
+                    <option value="pos">Postgrado</option>
+                    </select>  
+            </div>
+            <div class="entrada">
+                <label for="area" >11.Area de desempeño</label> <br/>
+                <select id="area" name="area">
+                    <option value="adm" selected="selected" >Administración</option>
+                    <option value="ventas">Ventas y Servicios</option>
+                    <option value="finanzas">Finanzas</option>
+                </select>  
+            </div>
+            <div class="entrada">
+                <label for="turno" >12.Turno</label> <br/>
+                <select id="turno" name="turno">
+                    <option value="m" selected="selected" >Mañana</option>
+                    <option value="t">Tarde</option>
+                    <option value="n">Noche</option>
+                </select>  
+            </div>
+            <div class="entrada">
+                <label for="sexo">13.Conduce</label>
+                    <input type="radio" id="si" name="conduce" value="si" checked="checked"> Si
+                    <input type="radio" id="no" name="conduce" value="no"> No
+            </div>
+        
+        <div class="control">
+            <input type="submit" value="Enviar" class="boton">
+            <input type="reset" value="Reset" class="boton">
+        </div>
+    </form> 
+    <footer>
+        <h1>Pie de formulario</h1>
+    </footer>
+    <a href="../../../cssejercicios/index.html" class="volver">Volver</a> 
+</div>
+</body>
+</html>

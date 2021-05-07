@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+#menu ul li {
+    display: inline-block;
+    padding: 10px 30px;
+}
+
+#menu ul li:hover{
+    background-color: rgb(136, 193, 212);
+}
+
+#menu ul a {
+    color: white;
+}
+
+#menu ul li {
+    background-color:#2e518b;
+    position:relative; 
+    float:left;    
+}
+#menu ul ul { 
+    display:none; 
+    position:absolute; 
+    top:100%; 
+    left:0; 
+}
+
+/* items del menu desplegable */
+#menu ul ul li {
+    padding-left: 2%;
+    float:none; 
+    width: 200px;
+}
+
+/*La lista desplegable*/
+#menu ul ul a {
+    padding:10px; 
+}
+/* items del menu desplegable al pasar el ratón */
+#menu ul li:hover ul { 
+    display:block;
+}
+.volver {
+    font-size: 16px;
+    padding: 18px 30px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    transition: all 300ms ease 0ms;
+    z-index: 99;
+    border: 2px solid blueviolet;
+    background-color: white;
+    color: blueviolet;
+
+}
+.volver:hover {
+    background-color:blueviolet;
+    color: white;
+}  

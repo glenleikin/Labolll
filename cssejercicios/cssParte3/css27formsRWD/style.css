@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0%;
+    padding: 0%;
+    height: 100%;
+    background-color:lightseagreen;
+}
+form {
+    margin: 0%;
+    padding: 0%;
+    height:80%;
+    width:100%;
+    overflow:auto;
+}
+header{
+    background-color:lightseagreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+.contenedor{
+    margin: 0%;
+    padding: 0%;
+    background-color: lightslategrey;
+}
+.entrada {
+    text-align:left;
+    height:19vh;
+    float:left;
+    border-style:solid;
+    border-color:gray;
+    border-width:1px;
+    padding:1%;
+    background-color: rgb(212, 208, 208);
+}
+
+label {
+    display:block;
+}
+
+.boton {
+    width:10%;
+    height:80%;
+    background-color:#AAAAAA;
+    cursor:pointer;
+}
+    
+.control {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width:100%;
+    height: 114px;
+    background-color: rgb(51, 51, 51);
+}
+
+footer{
+    background-color:lightseagreen;
+    padding-left: 0%;
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+@media (min-width:900px){
+    .entrada {
+    width:20%;
+    }
+}
+
+@media (min-width:100px) and (max-width:900px){ 
+    .entrada {
+    width:50%;
+    }
+}
+    
+.volver {
+    font-size: 16px;
+    padding: 18px 30px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    transition: all 300ms ease 0ms;
+    z-index: 99;
+    border: 2px solid blueviolet;
+    background-color: white;
+    color: blueviolet;
+
+}
+.volver:hover {
+    background-color:blueviolet;
+    color: white;
+}  
