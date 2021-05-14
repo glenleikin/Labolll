@@ -55,8 +55,12 @@
 
     document.getElementById("mayor").onclick=function(){
         var mayor=parseInt(document.getElementById("1").value);
-        if (parseInt(document.getElementById("2").value)>mayor){ mayor=parseInt(document.getElementById("2").value) }
-        if (parseInt(document.getElementById("3").value)>mayor){ mayor=parseInt(document.getElementById("3").value) }
+        if (parseInt(document.getElementById("2").value)>mayor){
+		mayor=parseInt(document.getElementById("2").value) 
+	}
+        if (parseInt(document.getElementById("3").value)>mayor){ 
+		mayor=parseInt(document.getElementById("3").value) 
+	}
         document.getElementById("resultado").value = mayor;
 	}
     </script>
