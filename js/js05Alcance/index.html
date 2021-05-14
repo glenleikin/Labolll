@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../volver/style.css">
+    <style>
+        button{
+            float:left; 
+            margin: 10px;
+            text-align:center; 
+            width:32%;
+            }
+        @media (min-width:0px) and (max-width:1520px){ 
+            button {
+                width:100%;
+            }
+        }
+    </style>
+    <title>Alcance</title>
+</head>
+<body>
+    <button id="incorrecta" title="Inicializa variable global desde adentro de una función con declaración var">Inicialización incorrecta</button>
+    <button id="correcta" title="Inicializa variable global desde adentro de una función sin declaración var">Inicialización correcta</button>
+    <button id="mostrar">Muestra variable global</button>
+    <script type="text/javascript">
+        var globalVar;
+
+        document.getElementById("incorrecta").onclick=function(){
+        var globalVar=prompt("Ingrese valor para la variable global");
+        alert("El valor de la variable local ingresada es: "+globalVar);
+        alert("El tipo de la variable local ingresada es: "+typeof globalVar);
+        }
+        document.getElementById("correcta").onclick=function(){
+        globalVar=prompt("Ingrese valor para la variable global");
+        alert("El valor de la variable global es: "+globalVar);
+        alert("El tipo de la variable global es: "+ typeof globalVar);
+        }
+        document.getElementById("mostrar").onclick=function(){
+            if (globalVar){
+                alert("El valor de la variable global es: "+globalVar);
+                alert("El tipo de la variable global es: "+ typeof globalVar);  
+            }
+            else{
+                alert("La variable global no ha sido asignada");
+            }
+        }
+    </script> 
+    <a href="../../../PaginaPrincipal/js/index.html" class="volver">Volver</a>
+</body>
+</html>
