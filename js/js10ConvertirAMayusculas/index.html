@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css08y10/style.css">
+    <link rel="stylesheet" href="../volver/style.css">
+    <title>Convertir A Mayúsculas</title>
+</head>
+<body>
+    <div class="caja">            
+        <div class="contenedor">      
+            <input type="text" id="nombre" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Nombre</label>
+          </div>
+            
+          <div class="contenedor">      
+            <input type="text" id="apellido" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Apellido</label>
+          </div>
+    </div>
+    <script>
+        document.getElementById("nombre").onchange= function() {
+        this.value = this.value.toUpperCase();
+        }
+        document.getElementById("apellido").onchange= function() {
+        this.value = this.value.toUpperCase();
+        }
+    </script>
+    <a href="../../../PaginaPrincipal/js/index.html" class="volver">Volver</a>  
+</body>
+</html>
