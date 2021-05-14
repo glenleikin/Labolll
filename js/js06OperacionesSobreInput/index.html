@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../volver/style.css">
+    <title>Operaciones sobre Input</title>
+</head>
+<body>
+    <h3>Introducir un valor en el cuadro de texto y luego pulsar el botón para ejecutar el procedimiento correspondiente</h3>
+    <input type="number" id="num"></input>
+    <button id="mostrar">Muestra valor</button>
+    <button id="sumar1">Suma 1</button>
+    <button id="cuadrado">X**2</button>
+    <button id="por2">Multiplica por 2</button>	
+    <button id="potenciar">2**X</button>		
+
+    <script type="text/javascript">
+        document.getElementById("mostrar").onclick=function(){
+            if(document.getElementById("num").value){
+                alert(document.getElementById("num").value);
+            }else{
+            alert("No hay ningun valor en el input");
+            }
+        }     
+        document.getElementById("sumar1").onclick=function(){
+        document.getElementById("num").value = parseInt(document.getElementById("num").value) + 1;
+        }       
+        document.getElementById("cuadrado").onclick=function(){
+        document.getElementById("num").value = parseInt(document.getElementById("num").value) * parseInt(document.getElementById("num").value);
+        }       
+        document.getElementById("por2").onclick=function(){
+        document.getElementById("num").value = parseInt(document.getElementById("num").value) * 2;
+        }			
+        document.getElementById("potenciar").onclick=function(){
+        document.getElementById("num").value = 2 ** parseInt(document.getElementById("num").value);
+        }
+    </script>
+<a href="../../../PaginaPrincipal/js/index.html" class="volver">Volver</a>
+</body>
+</html>
