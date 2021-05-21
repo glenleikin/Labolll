@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        html,body{
+            margin: 0%;
+            padding: 0%;
+            height: 100%;
+        }
+        .contenedor{
+            margin: auto;
+            background-color: lightblue;
+            width: 80%;
+            height: 400px;
+        }
+        .controles{
+            position:absolute; 
+            height: 60%;
+            left: 45%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .volver {
+            font-size: 16px;
+            padding: 18px 30px;
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            transition: all 300ms ease 0ms;
+            z-index: 99;
+            border: 2px solid blueviolet;
+            background-color: white;
+            color: blueviolet;
+        }
+        .volver:hover {
+            background-color:blueviolet;
+            color: white;
+        }  
+    </style>
+    <title>Form Confirmacion</title>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Confirmación de envío y reset</h1>
+        <form action="" id="miform">
+        <div>
+        <label for="nombre">Nombre</label> <br>
+        <input type="text" name="nombre" id="nombre"> <br>
+        </div>
+        <div>
+        <label for="apellido">Apellido</label> <br>
+        <input type="text" name="apellido" id="apellido"> <br>
+        </div>
+        <div class ="controles">
+            <button onclick="limpiar()">Blanquear</button>
+            <button onclick="pregunta()">Enviar</button>
+        </div>
+        </form>
+    </div>
+    <script>
+        function pregunta(){
+            opcion = confirm('¿Estas seguro de enviar este formulario?')
+                if (opcion) {
+                    document.getElementById("miform").method ="get";
+                    document.getElementById("miform").action ="./RespuestaAFormulario.html";
+                    document.getElementById("miform").submit();
+                }
+            }
+        function limpiar(){
+            document.getElementById("miform").reset();
+        }
+    </script>
+        <a href="../index.html" class="volver">Volver</a>
+</body>
+</html>

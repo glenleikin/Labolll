@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creación de Objetos</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        html,body{
+            margin: 0%;
+            padding: 0%;
+            height: 100%;
+        }
+        .contenedor{
+            margin: auto;
+            width: 60%;
+            height: 300px;
+            margin-top: 8%;
+            background-color: lightyellow;
+            overflow: auto;
+        }
+        button{
+            background-color: lightskyblue;
+            border-style: solid 1 px;
+        }
+        div.claseObjDin{
+            margin: 2px;
+            width: 350px;
+            height: 60px;
+            background-color: lightblue;
+            border-style: solid;
+        }
+        .volver {
+            font-size: 16px;
+            padding: 18px 30px;
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            transition: all 300ms ease 0ms;
+            z-index: 99;
+            border: 2px solid blueviolet;
+            background-color: white;
+            color: blueviolet;
+        }
+        .volver:hover {
+            background-color:blueviolet;
+            color: white;
+        } 
+    </style>
+</head>
+<body>
+    <button onclick="crear()">Crear</button>
+    <button onclick="limpiar()" id="limpiar">Limpiar</button>
+    <button onclick="info()" id="info">Info</button>
+    <div class="contenedor" id="contenedor">
+    </div>
+</body>
+<script>
+        function crear(){
+            var objDiv = document.createElement("div");
+            var textoHtml = "<h1> Elemento creado: ";
+            textoHtml = textoHtml + document.getElementById("contenedor").childNodes.length;
+            textoHtml = textoHtml + "</h1>";
+            objDiv.className="claseObjDin";
+            objDiv.innerHTML=textoHtml;
+            document.getElementById("contenedor").appendChild(objDiv);
+        }
+        function limpiar(){
+            while(document.getElementById("contenedor").childNodes.length>0) {
+            document.getElementById("contenedor").removeChild(document.getElementById("contenedor").childNodes[0]);
+        }
+        }
+        function info(){
+            alert('longitud del childNodes: '+document.getElementById("contenedor").childNodes.length);+(' ');
+        }
+</script>
+<a href="../index.html" class="volver">Volver</a>
+</html>

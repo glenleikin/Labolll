@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Objeto Datos</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        html,body{
+            margin: 0%;
+            padding: 0%;
+            height: 100%;
+        }
+        table,th,td {
+            border: 3px solid black;
+            border-collapse: collapse;
+        }
+        .datos{
+            margin: auto;
+            width: 90%;
+            height: auto;
+            box-sizing: border-box;
+            background-color: lightblue;
+        }
+        .controles{
+            margin: auto;
+            margin-top: 20px;
+            width: 90%;
+            height: auto;
+            box-sizing: border-box;
+            background-color: lightyellow;
+        }
+        .volver {
+            font-size: 16px;
+            padding: 18px 30px;
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            transition: all 300ms ease 0ms;
+            z-index: 99;
+            border: 2px solid blueviolet;
+            background-color: white;
+            color: blueviolet;
+        }
+        .volver:hover {
+            background-color:blueviolet;
+            color: white;
+        } 
+    </style>
+</head>
+<body>
+	<div class="datos">
+            <h3>Adicionar Persona</h3>
+            <label>Nombre:</label><br/>
+            <input type="text" id="nombre" required="required"/><br><br>
+            <label>Apellido:</label><br/>
+            <input type="text" id="apellido" required="required"/><br><br>
+            <label>Fecha de nacimiento:</label><br/>
+            <input type="text" id="fecha" required="required"/><br><br>
+            <button id="crear">Crea persona</button><br>
+    </div>
+    <div class="controles">
+        <h3>Control</h3>
+        <button id="mostrar">Lista Persona</button>
+        <button id="ocultar">Oculta presentacion</button>
+	</div>	
+    <br><br><br><br><br><br>
+    <div id="contenedor">
+    </div>
+	<script type="text/javascript">
+		var objetoPersona={nombre:"Pablo",apellido:"Galdi",fecha:"01/07/1956"};
+			var arregloPersonas=[objetoPersona];
+			arregloPersonas.push({nombre:"Jose",apellido:"Witt",fecha:"17/01/1985"});
+			var objetoPersonas ={personas: arregloPersonas};
+
+			document.getElementById("crear").onclick=function(){
+			var dato1=document.getElementById("nombre").checkValidity();
+			var dato2=document.getElementById("apellido").checkValidity();
+			var dato3=document.getElementById("fecha").checkValidity();
+			
+			if(dato1,dato2,dato3){
+				var nom=document.getElementById("nombre").value;
+				var ape=document.getElementById("apellido").value;
+				var fec=document.getElementById("fecha").value;
+				objetoPersonas.personas.push({nombre:nom,apellido:ape,fecha:fec});
+				document.getElementById("nombre").value="";
+				document.getElementById("apellido").value="";
+				document.getElementById("fecha").value="";
+				mostrar();
+			}
+			else{
+				alert("Revise los datos ingresados");
+			}
+			}
+			function mostrar(){
+			var texto=""
+			texto="<h2>Presentación</h2>";
+			texto=texto+"<table style ='border-collapse:collapse;'>";
+			texto= texto + "<tr><th>Nombre</th><th>Apellido</th><th>Fecha de nacimiento</th></tr>";
+			objetoPersonas.personas.forEach(function(item,index){
+				texto=texto + "<tr>";
+				texto=texto + "<td>" + item.nombre + "</td>";
+				texto=texto + "<td>" + item.apellido + "</td>";
+				texto=texto + "<td>" + item.fecha + "</td>";
+				texto=texto + "</tr>";
+			});
+			texto=texto + "</table>";
+			texto=texto + "<h4>La longitud del arreglo de personas es: " + objetoPersonas.personas.length + " </h4>";
+			document.getElementById("contenedor").innerHTML=texto;
+			document.getElementById("contenedor").style.display = "block";
+			}			
+			document.getElementById("mostrar").onclick=function(){
+			mostrar();
+			}			
+			document.getElementById("ocultar").onclick=function(){
+			document.getElementById("contenedor").style.display = "none";
+			}
+		</script>
+        <a href="../index.html" class="volver">Volver</a>
+</body>
+</html>

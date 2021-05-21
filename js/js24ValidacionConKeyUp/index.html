@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación Con KeyUp</title>
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+    }
+    html,body{
+        margin: 0%;
+        padding: 0%;
+        height: 100%;
+    }
+    .contenedor{
+        margin: auto;
+        width: 60%;
+        height: 200px;
+        background-color: lightblue;
+    }
+    .contenedor input{
+        height: 30px;
+        width: 150px;
+    }
+    .controles{
+        position:absolute; 
+        height: 20%;
+        left: 37%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .controles button{
+        height: 30px;
+        width: 200px;
+    }
+    .volver {
+        font-size: 16px;
+        padding: 18px 30px;
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        transition: all 300ms ease 0ms;
+        z-index: 99;
+        border: 2px solid blueviolet;
+        background-color: white;
+        color: blueviolet;
+    }
+    .volver:hover {
+        background-color:blueviolet;
+        color: white;
+    }  
+    </style>
+</head>
+<body>
+    <h1>Ejer validación de un INPUT</h1>
+    <div class="contenedor">
+        <form id="miform">
+            <div class="datos">
+            <label for="dia">Ingrese el dia del mes:</label><br>
+            <input type="number" min="1" max="31" name="dia" id="dia"><br>
+            <label for="mes">Ingrese el mes:</label><br>
+            <input type="number" min="1" max="12" name="mes" id="mes"><br>
+            </div>
+            <div class="controles">
+                <button onclick="pregunta()">Enviar</button>
+                <button onclick="limpiar()">Reset</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('dia').onkeyup = function(){
+            if ( !document.getElementById('dia').checkValidity() ) {
+                alert('El valor debe estar entre 1 y 31')
+            }
+        }
+        document.getElementById('mes').onkeyup = function(){
+            if ( !document.getElementById('mes').checkValidity() ) {
+                alert('El valordebe estar entre 1 y 12')
+            }
+        }
+        function pregunta(){
+            opcion = confirm('¿Estas seguro de enviar este formulario?')
+                if (opcion) {
+                    document.getElementById("miform").method ="get";
+                    document.getElementById("miform").action ="./RespuestaAFormulario.html";
+                    document.getElementById("miform").submit();
+                }
+            }
+        function limpiar(){
+            document.getElementById("miform").reset();
+        }
+    </script>
+    <a href="../index.html" class="volver">Volver</a>
+</body>
+</html>
