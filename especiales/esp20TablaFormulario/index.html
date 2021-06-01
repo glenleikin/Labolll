@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="datos.js"></script>
+    <script src="zona.js"></script>
+    <title>Tabla Arreglo de Objetos</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100vh;
+            margin: 0 auto;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .contenedor {
+            width: 100%;
+            height: 100%;
+            font-size: 1vw;
+        }
+        header, footer {
+            width: 100%;
+            height: 10%;
+            background-color: lightgoldenrodyellow;
+            font-size: 1vw;
+        }
+        header {
+            display: flex;
+            justify-content: space-around;
+        }
+        header .titulo {
+            width: 60%;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        header .control {
+            width: 40%;
+            display: flex;
+            padding: 1rem;
+            justify-content: space-around;
+        }
+        header .control button {
+            text-align: center;
+            width: 45%;
+        }
+        footer {
+            text-align: center;
+        }
+        table {
+            border: 2px solid black;
+            border-collapse: collapse;
+            background-color: lightgrey;
+            width: 100%;
+            height: 80%;
+        }
+        thead, tfoot {
+            background-color: orange;
+            height: 10%;
+        }
+        thead tr th, tfoot tr th {
+            color: whitesmoke;
+            font-size: 1rem;
+            padding: 0.5rem;
+            border-right: 1px solid black;
+        }
+        tbody {
+            overflow: auto;
+            height: 90%;
+        }
+        tbody tr {
+            height: 4rem;
+        }
+        tbody tr td {
+            text-align: center;
+            font-size: 1rem;
+        }
+        tbody tr:nth-child(odd) {
+            background: rgba(0, 0, 0, 0.2);
+        }
+        tbody, thead tr, tfoot {
+            display: block;
+        }
+        tbody td, thead th, tfoot th {
+            width: 300px;
+        }
+        .volver {
+            font-size: 16px;
+            padding: 18px 30px;
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            transition: all 300ms ease 0ms;
+            z-index: 99;
+            border: 2px solid blueviolet;
+            background-color: white;
+            color: blueviolet;
+        }
+        .volver:hover {
+            background-color:blueviolet;
+            color: white;
+        }
+        .modal {
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            box-sizing: border-box;
+            height: 400px;
+            width: 700px;
+            visibility: hidden;
+        }
+        .activo {
+            visibility: visible;
+        }
+        .desactivado {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        .modalHeader {
+            background-color: gray;
+            height: 8%;
+        }
+        .modalHeader h2 {
+            margin: 0 0 10px;
+            display: inline;
+        }
+        .modalHeader button {
+            float: right;
+            width: 30px;
+            height: 30px;
+        }
+        .modalHeader button:hover {
+            background-color: red;
+        }
+        .modalBody {
+            height: 90%;
+        }
+        header, footer{
+            display:block;
+            background-color:lightgrey;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:10%;
+            width:100%;
+        }			
+        label{
+            display:block;
+        }			
+        .dato{
+            font-size: 1.5vw;
+            flex-direction: column;
+            display:flex;
+            justify-content:left;
+            margin-left: 10%;
+            width:40%;
+            height:30%;
+            float:left;
+            padding:1%;
+            box-sizing:border-box;
+        }						
+        input, select{
+            font-size:1vw;
+            height:30%;
+            width:75%;
+        }       
+        input.enviar{
+            margin-left: 7%;
+            font-size:1vw;
+            height:35%;
+            width:75%;
+        }			      
+        form{
+            display:block;
+            background-color:lightyellow;
+            overflow:auto;
+            height:80%;
+            width:100%;
+        }	
+    </style>
+</head>
+<body>
+    <div class="contenedor" id="contenedor">
+        <header>
+            <div class="titulo">
+                <h2>Datos</h2>
+            </div>
+            <div class="control">
+                <button id="cargar">Cargar datos</button>
+                <button id="vaciar">Vaciar datos</button>
+                <button id="abrir" class="btn" type="button">Cargar Form</button>
+            </div>
+        </header>
+        <table>
+            <thead>
+                <tr>
+                    <th campo-dato="nombre">Nombre</th>
+                    <th campo-dato="apellido">Apellido</th>
+                    <th campo-dato="edad">Edad</th>
+                    <th campo-dato="zona">Zona</th>
+                    <th campo-dato="codigo">Codigo</th>
+                    <th campo-dato="fecha">Fecha</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+            <tfoot>
+                <tr>
+                    <th campo-dato="nombre">Nombre</th>
+                    <th campo-dato="apellido">Apellido</th>
+                    <th campo-dato="edad">Edad</th>
+                    <th campo-dato="zona">Zona</th>
+                    <th campo-dato="codigo">Codigo</th>
+                    <th campo-dato="fecha">Fecha</th>
+                </tr>
+            </tfoot>
+        </table>
+        <footer>
+            <h2>Pie</h2>
+        </footer>
+    </div>  
+    <div id="ventana" class="modal">
+        <div class="modalHeader"><h2>Encabezado modal</h2><button id="cerrar" type="button">X</button></div>
+        <div class="modalBody">
+            <header>
+                <h1>Formulario de Alta</h1>
+            </header>   
+            <form action="./respuesta.html" method="get" id="miform"> 
+                <div class="dato">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" value="" required="required"/>
+                </div>
+                <div class="dato">
+                    <label for="zona">Zona:</label>
+                    <select name="zona" id="zona" required="required">
+                    </select>
+                </div>
+                <div class="dato">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" value="" required="required"/>
+                </div>
+                <div class="dato">
+                    <label for="fecha">Fecha:</label> 
+                    <input type="date" id="fecha" name="fecha" required="required" />
+                </div>		
+                <div class="dato">
+                    <label for="codigo">Codigo Postal:</label> 
+                    <input type="number" id="codigo" name="codigo" min="0" required="required"/>
+                </div>	
+                <div class="dato">
+                    <input class="enviar" type="submit" value="Enviar" />
+                </div>					            
+            </form>			
+            <footer>
+                <h1>Pie del formulario</h1>
+            </footer>	
+        </div>
+      </div>  
+<script>
+    var objArticulos = JSON.parse(datoOpciones);
+    $("#vaciar").click(() => {
+    $("#tbody").empty();
+    });
+    $("#cargar").click(function() {
+    if($("#tbody").children().length == 0) {  
+        objArticulos.datos.forEach(function(element) {
+            $('#tbody').append(
+                '<tr>'+
+                    '<td campo-dato = "nombre">'+ element.nombre +'</td>'+
+                    '<td campo-dato = "apellido">'+ element.apellido +'</td>'+
+                    '<td campo-dato = "edad">'+ element.edad +'</td>'+
+                    '<td campo-dato = "zona">'+ element.zona +'</td>'+
+                    '<td campo-dato = "codigo">'+ element.codigo +'</td>'+
+                    '<td campo-dato = "fecha">'+ element.fecha +'</td>'+
+                '</tr>'
+            );
+        });
+        }
+    });
+    $(document).ready( function() {
+        var textoJson = JSON.parse(zonaOpciones);
+                textoJson.zona.forEach(element => {
+                $( "select" ).append( "<option>"+ element +"</option>" ); 
+        });
+    $("#abrir").click(() => {
+        $("#ventana").addClass("activo")
+        $("#contenedor").addClass("desactivado")
+    });
+    $("#cerrar").click(() => {
+        $("#ventana").removeClass("activo")
+        $("#contenedor").removeClass("desactivado")
+    });
+    });
+</script>
+    <a href="../index.html" class="volver">Volver</a>   
+</body>
+</html>

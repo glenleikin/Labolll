@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="zona.js"></script>
+    <title>Ventana Modal</title>
+<style>
+    html, body {
+        height: 100%;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    .btn {
+        height: 50px;
+        width: auto;
+        font-size: 20px;
+    }
+    .contenedor {
+        box-sizing: border-box;
+        padding: 1%;
+        height: 100%;
+        width: 100%;
+        overflow-y: auto;
+        background-color: lightblue;
+    }
+    .modal {
+        position: absolute;
+        top: 20%;
+        left: 30%;
+        box-sizing: border-box;
+        height: 500px;
+        width: 700px;
+        background-color: lightblue;
+        visibility: hidden;
+    }
+    .activo {
+        visibility: visible;
+    }
+    .desactivado {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+    .modalHeader {
+        background-color: gray;
+        height: 6%;
+    }
+    .modalHeader h2 {
+        margin: 0 0 10px;
+        display: inline;
+    }
+    .modalHeader button {
+        float: right;
+        width: 30px;
+        height: 30px;
+    }
+    .modalHeader button:hover {
+        background-color: red;
+    }
+    .modalBody {
+        height: 90%;
+    }
+    header, footer{
+        display:block;
+        background-color:lightgrey;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:10%;
+        width:100%;
+    }			
+    label{
+        display:block;
+    }			
+    .dato{
+        font-size: 1.5vw;
+        flex-direction: column;
+        display:flex;
+        justify-content:left;
+        margin-left: 10%;
+        width:40%;
+        height:30%;
+        float:left;
+        padding:1%;
+        box-sizing:border-box;
+    }						
+    input, select{
+        font-size:1vw;
+        height:30%;
+        width:75%;
+    }       
+    input.enviar{
+        margin-left: 7%;
+        font-size:1vw;
+        height:35%;
+        width:75%;
+    }			      
+    form{
+        display:block;
+        background-color:lightyellow;
+        overflow:auto;
+        height:80%;
+        width:100%;
+    }	
+    .volver {
+        font-size: 16px;
+        padding: 18px 30px;
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        transition: all 300ms ease 0ms;
+        z-index: 99;
+        border: 2px solid blueviolet;
+        background-color: white;
+        color: blueviolet;
+    }
+    .volver:hover {
+        background-color:blueviolet;
+        color: white;
+    }  
+</style>
+</head>
+<body>
+    <div class="contenedor" id="contenedor">
+        <h1>Esto es el Div contenedor</h1>
+        <button id="abrir" class="btn" type="button">Abre DIV modal</button>
+    </div>
+      <div id="ventana" class="modal">
+        <div class="modalHeader"><h2>Encabezado modal</h2><button id="cerrar" type="button">X</button></div>
+        <div class="modalBody">
+            <header>
+                <h1>Formulario de Alta</h1>
+            </header>   
+            <form action="./respuesta.html" method="get" id="miform"> 
+                <div class="dato">
+                    <label for="nombre">Nombre:</label> <br>
+                    <input type="text" id="nombre" name="nombre" value="" required="required"/>
+                </div>
+                <div class="dato">
+                    <label for="zona">Zona:</label> <br>
+                    <select name="zona" id="zona" required="required">
+                    </select>
+                </div>
+                <div class="dato">
+                    <label for="apellido">Apellido:</label> <br>
+                    <input type="text" id="apellido" name="apellido" value="" required="required"/>
+                </div>
+                <div class="dato">
+                    <label for="fecha">Fecha:</label> <br>
+                    <input type="date" id="fecha" name="fecha" required="required" />
+                </div>		
+                <div class="dato">
+                    <label for="codigo">Codigo Postal:</label> <br>
+                    <input type="number" id="codigo" name="codigo" min="0" required="required"/>
+                </div>	
+                <div class="dato">
+                    <input class="enviar" type="submit" value="Enviar" />
+                </div>					            
+            </form>			
+            <footer>
+                <h1>Pie del formulario</h1>
+            </footer>	
+        </div>
+      </div>
+      <a href="../index.html" class="volver">Volver</a>
+<script>
+    $(document).ready( function() {
+        var textoJson = JSON.parse(zonaOpciones);
+                textoJson.zona.forEach(element => {
+                $( "select" ).append( "<option>"+ element +"</option>" ); 
+        });
+    $("#abrir").click(() => {
+        $("#ventana").addClass("activo")
+        $("#contenedor").addClass("desactivado")
+    });
+    $("#cerrar").click(() => {
+        $("#ventana").removeClass("activo")
+        $("#contenedor").removeClass("desactivado")
+    });
+    });
+</script>
+</body>
+</html>
